@@ -59,7 +59,7 @@ class ScrumBoard
 
 		// SETTING THE SCRUM BOARD STYLE SHEET
 		var ScrumBoardStyleRAW = `
-			.ScrumBoard{width:100%;overflow-x:scroll;outline:none;scrollbar-width:none}
+			.ScrumBoard{width:100%;outline:none;scrollbar-width:none}
 			.ScrumBoard *{text-align:left}
 			.ScrumBoard::-webkit-scrollbar{display:none}
 			.ScrumBoard_wrapper{float:left;width:1137px}

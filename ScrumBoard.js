@@ -4,7 +4,7 @@ class ScrumBoard
 		{
 		this.container = container;
 
-		this.addingDelay = 1;
+		this.addingDelay = 20;
 
 		this.scrum_PendingColumn = [];
 		this.scrum_DevelopmentColumn = [];

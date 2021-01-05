@@ -29,7 +29,7 @@ class ScrumBoard
 			{
 			this.STRING_PENDING = "TAREAS PENDIENTES";
 			this.STRING_DEVELOPMENT = "EN DESARROLLO";
-			this.STRING_TEST = "EN TESTING";
+			this.STRING_TEST = "PARA PRUEBAS";
 			this.STRING_DONE = "FINALIZADAS";
 			this.STRING_SHOWMORE = "Mostrar m&aacute;s";
 			}
@@ -37,7 +37,7 @@ class ScrumBoard
 			{
 			this.STRING_PENDING = "PENDING TASKS";
 			this.STRING_DEVELOPMENT = "IN DEVELOPMENT";
-			this.STRING_TEST = "IN TEST";
+			this.STRING_TEST = "FOR TESTING";
 			this.STRING_DONE = "DONE";
 			this.STRING_SHOWMORE = "Show more";
 			}

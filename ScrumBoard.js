@@ -4,6 +4,9 @@ class ScrumBoard
 		{
 		this.container = container;
 
+		this.columns = 4;
+		this.columnsProccesed = 0;
+
 		this.addingDelay = 20;
 		this.maxVisibleTasksPerColumn = 20;
 
@@ -40,18 +43,6 @@ class ScrumBoard
 			}
 		}
 
-	// FUNCTION THAT WILL ADD THE TASKS TO THE FIRST COLUMN (PENDING)
-	scrum_DataToColumn1(){var scrum_from=this.scrum_PendingColumn;var scrum_to="ScrumBoard_column_pending";var scrum_task_showmore="ScrumBoard_readmore ScrumBoard_showmore1";var scrum_task_hidden="ScrumBoard_task ScrumBoard_hidden1";var scrum_task_normal="ScrumBoard_task";var scrum_counter=-1;var tempRef=this;function loop(){if(scrum_counter<scrum_from.length-1){scrum_counter=scrum_counter+1;try{var finalClassName=scrum_task_normal;if(scrum_counter>=tempRef.maxVisibleTasksPerColumn){finalClassName = scrum_task_hidden;}document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='" + finalClassName + "'><div class='scrum_task_details'>"+scrum_from[scrum_counter][1]+"</div><div class='ScrumBoard_task_project'>"+scrum_from[scrum_counter][0]+"</div></div>";if(scrum_counter==tempRef.maxVisibleTasksPerColumn){document.getElementsByClassName(scrum_to)[0].innerHTML=document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='"+scrum_task_showmore+"' onclick='for(var i=0;i<document.getElementsByClassName(\""+scrum_task_hidden+"\").length;i++){document.getElementsByClassName(\""+scrum_task_hidden+"\")[i].style.display=\"block\";}document.getElementsByClassName(\""+scrum_task_showmore+"\")[0].style.display=\"none\";'>"+tempRef.STRING_SHOWMORE +"</div>";}}catch(err){}setTimeout(loop,tempRef.addingDelay);}else{tempRef.scrum_DataToColumn2();}}loop();}
-
-	// FUNCTION THAT WILL ADD THE TASKS TO THE SECOND COLUMN (IN DEVELOPMENT)
-	scrum_DataToColumn2(){var scrum_from=this.scrum_DevelopmentColumn;var scrum_to="ScrumBoard_column_development";var scrum_task_showmore="ScrumBoard_readmore ScrumBoard_showmore2";var scrum_task_hidden="ScrumBoard_task ScrumBoard_hidden2";var scrum_task_normal="ScrumBoard_task";var scrum_counter=-1;var tempRef=this;function loop(){if(scrum_counter<scrum_from.length-1){scrum_counter=scrum_counter+1;try{var finalClassName=scrum_task_normal;if(scrum_counter>=tempRef.maxVisibleTasksPerColumn){finalClassName = scrum_task_hidden;}document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='" + finalClassName + "'><div class='scrum_task_details'>"+scrum_from[scrum_counter][1]+"</div><div class='ScrumBoard_task_project'>"+scrum_from[scrum_counter][0]+"</div></div>";if(scrum_counter==tempRef.maxVisibleTasksPerColumn){document.getElementsByClassName(scrum_to)[0].innerHTML=document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='"+scrum_task_showmore+"' onclick='for(var i=0;i<document.getElementsByClassName(\""+scrum_task_hidden+"\").length;i++){document.getElementsByClassName(\""+scrum_task_hidden+"\")[i].style.display=\"block\";}document.getElementsByClassName(\""+scrum_task_showmore+"\")[0].style.display=\"none\";'>"+tempRef.STRING_SHOWMORE +"</div>";}}catch(err){}setTimeout(loop,tempRef.addingDelay);}else{tempRef.scrum_DataToColumn3();}}loop();}
-
-	// FUNCTION THAT WILL ADD THE TASKS TO THE THIRTH COLUMN (READY FOR TESTING)
-	scrum_DataToColumn3(){var scrum_from=this.scrum_ReadyForTestingColumn;var scrum_to="ScrumBoard_column_test";var scrum_task_showmore="ScrumBoard_readmore ScrumBoard_showmore3";var scrum_task_hidden="ScrumBoard_task ScrumBoard_hidden3";var scrum_task_normal="ScrumBoard_task";var scrum_counter=-1;var tempRef=this;function loop(){if(scrum_counter<scrum_from.length-1){scrum_counter=scrum_counter+1;try{var finalClassName=scrum_task_normal;if(scrum_counter>=tempRef.maxVisibleTasksPerColumn){finalClassName = scrum_task_hidden;}document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='" + finalClassName + "'><div class='scrum_task_details'>"+scrum_from[scrum_counter][1]+"</div><div class='ScrumBoard_task_project'>"+scrum_from[scrum_counter][0]+"</div></div>";if(scrum_counter==tempRef.maxVisibleTasksPerColumn){document.getElementsByClassName(scrum_to)[0].innerHTML=document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='"+scrum_task_showmore+"' onclick='for(var i=0;i<document.getElementsByClassName(\""+scrum_task_hidden+"\").length;i++){document.getElementsByClassName(\""+scrum_task_hidden+"\")[i].style.display=\"block\";}document.getElementsByClassName(\""+scrum_task_showmore+"\")[0].style.display=\"none\";'>"+tempRef.STRING_SHOWMORE +"</div>";}}catch(err){}setTimeout(loop,tempRef.addingDelay);}else{tempRef.scrum_DataToColumn4();}}loop();}
-
-	// FUNCTION THAT WILL ADD THE TASKS TO THE FOURTH COLUMN (DONE)
-	scrum_DataToColumn4(){var scrum_from=this.scrum_DoneColumn;var scrum_to="ScrumBoard_column_done";var scrum_task_showmore="ScrumBoard_readmore ScrumBoard_showmore4";var scrum_task_hidden="ScrumBoard_task ScrumBoard_hidden4";var scrum_task_normal="ScrumBoard_task";var scrum_counter=-1;var tempRef=this;function loop(){if(scrum_counter<scrum_from.length-1){scrum_counter=scrum_counter+1;try{var finalClassName=scrum_task_normal;if(scrum_counter>=tempRef.maxVisibleTasksPerColumn){finalClassName = scrum_task_hidden;}document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='" + finalClassName + "'><div class='scrum_task_details'>"+scrum_from[scrum_counter][1]+"</div><div class='ScrumBoard_task_project'>"+scrum_from[scrum_counter][0]+"</div></div>";if(scrum_counter==tempRef.maxVisibleTasksPerColumn){document.getElementsByClassName(scrum_to)[0].innerHTML=document.getElementsByClassName(scrum_to)[0].innerHTML+"<div class='"+scrum_task_showmore+"' onclick='for(var i=0;i<document.getElementsByClassName(\""+scrum_task_hidden+"\").length;i++){document.getElementsByClassName(\""+scrum_task_hidden+"\")[i].style.display=\"block\";}document.getElementsByClassName(\""+scrum_task_showmore+"\")[0].style.display=\"none\";'>"+tempRef.STRING_SHOWMORE+"</div>";}}catch(err){}setTimeout(loop,tempRef.addingDelay);}else{if (tempRef.runWhenDone!=null){tempRef.runWhenDone();}}}loop();}
-
 	showBoard(runWhenDone = null)
 		{
 		// SETTING WHICH FUNCTION WILL BE CALLED WHEN THE BOARD IS FULLY RENDERED
@@ -70,10 +61,10 @@ class ScrumBoard
 			.ScrumBoard_task_details a{text-decoration:none;color:#3a76b1;outline:none}
 			.ScrumBoard_task_project{float:left;color:gray;margin-bottom:3px}
 			.ScrumBoard_readmore{float:left;display:inline-block;width:100%;text-align:center;padding-top:5px;padding-bottom:5px;margin-bottom:10px;cursor:pointer}
+			.ScrumBoard_hidden0{display:none}
 			.ScrumBoard_hidden1{display:none}
 			.ScrumBoard_hidden2{display:none}
 			.ScrumBoard_hidden3{display:none}
-			.ScrumBoard_hidden4{display:none}
 
 			@media screen and (min-width:1920px)
 				{
@@ -103,8 +94,89 @@ class ScrumBoard
 		document.getElementsByClassName("ScrumBoard_column_title")[2].innerHTML = this.STRING_READYFORTESTING + " (" + this.scrum_ReadyForTestingColumn.length  + ")";
 		document.getElementsByClassName("ScrumBoard_column_title")[3].innerHTML = this.STRING_DONE + " (" + this.scrum_DoneColumn.length  + ")";
 
-		// ADDING THE VALUE FOR THE FIRST COLUMN
-		this.scrum_DataToColumn1();
+		// ADDING THE TASKS TO THE COLUMNS
+		this.scrum_AddDataToColumn(this.scrum_PendingColumn, "ScrumBoard_column_pending", 0);
+		this.scrum_AddDataToColumn(this.scrum_DevelopmentColumn, "ScrumBoard_column_development", 1);
+		this.scrum_AddDataToColumn(this.scrum_ReadyForTestingColumn, "ScrumBoard_column_test", 2);
+		this.scrum_AddDataToColumn(this.scrum_DoneColumn, "ScrumBoard_column_done", 3);
+		}
+
+	// FUNCTION THAT WILL ADD THE TASKS TO THE SELECTED COLUMN
+	scrum_AddDataToColumn(scrum_from, scrum_to, column_number)
+		{
+		var scrum_task_showmore = "ScrumBoard_readmore ScrumBoard_showmore" + column_number;
+		var scrum_task_hidden = "ScrumBoard_task ScrumBoard_hidden" + column_number;
+		var scrum_task_normal = "ScrumBoard_task";
+		var scrum_task_counter = -1;
+		var tempRef = this;
+
+		function loop(scrum_from, scrum_to, scrum_task_showmore, scrum_task_hidden, scrum_task_normal, scrum_task_counter, tempRef)
+			{
+			// CHECKING IF THERE IS A TASK TO ADD
+			if (scrum_task_counter < scrum_from.length-1)
+				{
+				// UPDATING THE TASK COUNTER
+				scrum_task_counter = scrum_task_counter + 1;
+
+				try
+					{
+					// CREATING A VARIABLE WITH THE CLASSNAME THAT WILL BE USED FOR THE TASK
+					var finalClassName = scrum_task_normal;
+
+					// CHECKING IF THE TASK MUST BE HIDDEN
+					if (scrum_task_counter>=tempRef.maxVisibleTasksPerColumn)
+						{
+						// HIDING THE TASK
+						finalClassName = scrum_task_hidden;
+						}
+
+					// ADDING THE TASK
+					document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML + "<div class='" + finalClassName + "'><div class='scrum_task_details'>" + scrum_from[scrum_task_counter][1] + "</div><div class='ScrumBoard_task_project'>" + scrum_from[scrum_task_counter][0] + "</div></div>";
+
+					// CHECKING IF THE 'SHOW MORE' ITEM MUST BE ADDED
+					if(scrum_task_counter==tempRef.maxVisibleTasksPerColumn)
+						{
+						// ADDING THE 'SHOW MORE' ITEM
+						document.getElementsByClassName(scrum_to)[0].innerHTML = document.getElementsByClassName(scrum_to)[0].innerHTML + "<div class='" + scrum_task_showmore + "' onclick='for(var i=0;i<document.getElementsByClassName(\"" + scrum_task_hidden + "\").length;i++){document.getElementsByClassName(\"" + scrum_task_hidden + "\")[i].style.display=\"block\";}document.getElementsByClassName(\"" + scrum_task_showmore + "\")[0].style.display=\"none\";'>" + tempRef.STRING_SHOWMORE +"</div>";
+						}
+					}
+				catch(err)
+					{
+					}
+
+				// SETTING A DELAY TO ADD THE NEXT TASK
+				setTimeout(function()
+					{
+					// CALLING THE LOOP FUNCTION TO ADD A TASK WITH THE SAME VALUES AS THE FIRST TIME BUT WITH THE SCRUM TASK COUNTER UPDATED
+					loop(scrum_from,scrum_to,scrum_task_showmore,scrum_task_hidden,scrum_task_normal,scrum_task_counter,tempRef);
+					}, tempRef.addingDelay);
+				}
+				else
+				{
+				// UPDATING THE COLUMNS PROCCESED COUNTER
+				tempRef.columnsProccesed = tempRef.columnsProccesed + 1;
+
+				// CHECKING IF ALL THE COLUMNS ARE RENDERED AND IF IT IS TIME TO RUN A FUNCTION (IF ANY)
+				tempRef.runWhenDoneChecking();
+				}
+			}
+
+		// CALLING THE LOOP FUNCTION TO ADD THE FIRST TASK
+		loop(scrum_from,scrum_to,scrum_task_showmore,scrum_task_hidden,scrum_task_normal,scrum_task_counter,this);
+		}
+
+	runWhenDoneChecking()
+		{
+		// CHECKING IF THERE IS A FUNCTION TO BE CALLED WHEN ALL THE COLUMNS ARE RENDERED
+		if (this.runWhenDone!=null)
+			{
+			// CHECKING IF ALL THE COLUMNS WERE RENDERED
+			if (this.columns == this.columnsProccesed)
+				{
+				// EXEUCTING THE FUNCTION
+				this.runWhenDone();
+				}
+			}
 		}
 
 	addToPending(a,b)

@@ -12,12 +12,12 @@ class ScrumBoard
 
 		this.scrum_PendingColumn = [];
 		this.scrum_DevelopmentColumn = [];
-		this.scrum_ReadyForTestingColumn = [];
+		this.scrum_TestColumn = [];
 		this.scrum_DoneColumn = [];
 
 		this.STRING_PENDING = "";
 		this.STRING_DEVELOPMENT = "";
-		this.STRING_TESTING = "";
+		this.STRING_TEST = "";
 		this.STRING_DONE = "";
 		this.STRING_SHOWMORE = "";
 
@@ -29,7 +29,7 @@ class ScrumBoard
 			{
 			this.STRING_PENDING = "TAREAS PENDIENTES";
 			this.STRING_DEVELOPMENT = "EN DESARROLLO";
-			this.STRING_TESTING = "EN TESTING";
+			this.STRING_TEST = "EN TESTING";
 			this.STRING_DONE = "FINALIZADAS";
 			this.STRING_SHOWMORE = "Mostrar m&aacute;s";
 			}
@@ -37,7 +37,7 @@ class ScrumBoard
 			{
 			this.STRING_PENDING = "PENDING TASKS";
 			this.STRING_DEVELOPMENT = "IN DEVELOPMENT";
-			this.STRING_TESTING = "IN TEST";
+			this.STRING_TEST = "IN TEST";
 			this.STRING_DONE = "DONE";
 			this.STRING_SHOWMORE = "Show more";
 			}
@@ -86,18 +86,18 @@ class ScrumBoard
 		headTag.appendChild(ScrumBoardStyle);
 
 		// INSERTING THE SCRUM BOARD HTML CONTENT INTO THE CONTAINER
-		document.getElementById(this.container).innerHTML = "<div class=\"ScrumBoard\"><div class=\"ScrumBoard_wrapper\"><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_pending\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_development\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_testing\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_done\"></div></div></div></div>";
+		document.getElementById(this.container).innerHTML = "<div class=\"ScrumBoard\"><div class=\"ScrumBoard_wrapper\"><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_pending\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_development\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_test\"></div></div><div class=\"ScrumBoard_column\"><div class=\"ScrumBoard_column_title\"></div><div class=\"ScrumBoard_column_done\"></div></div></div></div>";
 
 		// UPDATING THE SCRUM BOARD LABELS
 		document.getElementsByClassName("ScrumBoard_column_title")[0].innerHTML = this.STRING_PENDING + " (" + this.scrum_PendingColumn.length  + ")";
 		document.getElementsByClassName("ScrumBoard_column_title")[1].innerHTML = this.STRING_DEVELOPMENT + " (" + this.scrum_DevelopmentColumn.length  + ")";
-		document.getElementsByClassName("ScrumBoard_column_title")[2].innerHTML = this.STRING_TESTING + " (" + this.scrum_ReadyForTestingColumn.length  + ")";
+		document.getElementsByClassName("ScrumBoard_column_title")[2].innerHTML = this.STRING_TEST + " (" + this.scrum_TestColumn.length  + ")";
 		document.getElementsByClassName("ScrumBoard_column_title")[3].innerHTML = this.STRING_DONE + " (" + this.scrum_DoneColumn.length  + ")";
 
 		// ADDING THE TASKS TO THE COLUMNS
 		this.scrum_AddDataToColumn(this.scrum_PendingColumn, "ScrumBoard_column_pending", 0);
 		this.scrum_AddDataToColumn(this.scrum_DevelopmentColumn, "ScrumBoard_column_development", 1);
-		this.scrum_AddDataToColumn(this.scrum_ReadyForTestingColumn, "ScrumBoard_column_testing", 2);
+		this.scrum_AddDataToColumn(this.scrum_TestColumn, "ScrumBoard_column_test", 2);
 		this.scrum_AddDataToColumn(this.scrum_DoneColumn, "ScrumBoard_column_done", 3);
 		}
 
@@ -191,7 +191,7 @@ class ScrumBoard
 
 	addToTest(a,b)
 		{
-		this.scrum_ReadyForTestingColumn.push([a,b]);
+		this.scrum_TestColumn.push([a,b]);
 		}
 
 	addToDone(a,b)

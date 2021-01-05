@@ -54,7 +54,7 @@ class ScrumBoard
 			.ScrumBoard *{text-align:left}
 			.ScrumBoard::-webkit-scrollbar{display:none}
 			.ScrumBoard_wrapper{float:left;width:1137px}
-			.ScrumBoard_column{display:block;float:left;background-color:#ebecf0;border-radius:3px;width:272px;margin:5px 0 10px 10px;color:#172b4d;font-weight:bold;font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif}
+			.ScrumBoard_column{display:block;float:left;background-color:#ebecf0;border-radius:3px;width:272px;margin:10px 0 10px 10px;color:#172b4d;font-weight:bold;font-size:14px;font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif}
 			.ScrumBoard_column_title{margin:7px;padding:5px}
 			.ScrumBoard_task{float:left;background-color:white;margin-left:8px;width:241px;border-radius:3px;box-shadow:0 1px 2px rgba(9,30,66,.25);font-weight:normal;line-height:2;padding-left:7px;padding-right:7px;margin-bottom:10px}
 			.ScrumBoard_task_details{float:left;width:243px;line-height:1.5;margin-top:5px}
